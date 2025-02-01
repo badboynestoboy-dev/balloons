@@ -39,7 +39,7 @@ namespace Balloons.Features.UI
         public void AddScore(string score, string date)
         {
             _pooledView = _pool.Spawn();
-            _pooledView.transform.SetParent(_scoresParent, false);
+            _pooledView.transform.SetParent(_scoresParent);
             _pooledView.UpdateView(score, date);
 
             if (!_scoreViews.Contains(_pooledView))
