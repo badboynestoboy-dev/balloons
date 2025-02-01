@@ -11,6 +11,10 @@ namespace Balloons.Features.Gameplay
 
         public ScoreDataSetter(IUserDataHandler dataHandler) => _dataHandler = dataHandler;
 
+        /// <summary>
+        /// Сохранить результат
+        /// </summary>
+        /// <param name="score">Кол-во очков</param>
         public void SaveResult(int score)
         {
             if (score > 0)

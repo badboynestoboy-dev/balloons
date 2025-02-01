@@ -4,12 +4,18 @@
     using Balloons.Features.Input;
 
     /// <summary>
-    /// Счетчик тапов по объектам
+    /// Счетчик кол-ва очков
     /// </summary>
     public sealed class SuccessfulTapsCounter
     {
+        /// <summary>
+        /// Событие об изменении кол-ва очков
+        /// </summary>
         public event Action OnScoreChanged = delegate { };
 
+        /// <summary>
+        /// Кол-во очков
+        /// </summary>
         public int Score
         {
             get => score;
@@ -31,10 +37,19 @@
             ResetScore();
         }
 
+        /// <summary>
+        /// Начать отслеживание кол-ва очков
+        /// </summary>
         public void ObserveTaps() => _tapsDetector.OnObjectTapDetected += HandleTap;
 
+        /// <summary>
+        /// Сбросить кол-во очков
+        /// </summary>
         public void ResetScore() => Score = 0;
 
+        /// <summary>
+        /// Остановить отслеживание кол-ва очков
+        /// </summary>
         public void StopObservingTaps() => _tapsDetector.OnObjectTapDetected -= HandleTap;
 
         private void HandleTap(ITapHandler tapHandler)
