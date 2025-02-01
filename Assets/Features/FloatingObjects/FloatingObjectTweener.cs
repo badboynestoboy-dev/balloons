@@ -24,10 +24,6 @@ namespace Balloons.Features.FloatingObjects
             _tween = transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.OutBounce).OnComplete(() => Disappear());
         }
 
-        public override void Pause() => _tween.Pause();
-
-        public override void Proceed() => _tween.Play();
-
         private void OnEnable() => transform.localScale = Vector3.one;
 
         private void OnDestroy() => _tween.Kill();

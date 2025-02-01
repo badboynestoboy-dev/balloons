@@ -55,10 +55,6 @@ namespace Balloons.Features.FloatingObjects
             _maxSpawnRate = maxRate;
         }
 
-        public void PauseAllObjects() => _floatingObjects.ForEach(x => x.Pause());
-
-        public void LaunchAllObjects() => _floatingObjects.ForEach(x => x.Proceed());
-
         private void SpawnObject()
         {
             _pooledObject = _pool.Spawn();
