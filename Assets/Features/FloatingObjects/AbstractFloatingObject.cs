@@ -24,16 +24,6 @@ namespace Balloons.Features.FloatingObjects
         /// <param name="to">Конечная точка</param>
         public abstract void StartFloating(Vector3 from, Vector3 to);
 
-        /// <summary>
-        /// Остановить полет
-        /// </summary>
-        public abstract void Pause();
-
-        /// <summary>
-        /// Продолжить полет
-        /// </summary>
-        public abstract void Proceed();
-
         protected void Disappear() => OnDisappear(this);
 
         protected virtual float GetRandomDuration() => Random.Range(durationRange.x, durationRange.y);

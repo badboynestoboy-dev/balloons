@@ -14,9 +14,5 @@
         public void SetBorders(Vector3 xBorders, Vector3 yBorders);
 
         public void SetSpawnRate(float minRate, float maxRate);
-
-        public void PauseAllObjects();
-
-        public void LaunchAllObjects();
     }
 }
